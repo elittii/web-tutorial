@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css"
+    />
+  </head>
+  <body>
+    <fieldset>
+      <form action="" method="get" id="coffee-form">
+        <label for="coffee">Your Favorite Coffee:</label>
+        <select name="coffee" id="coffee" multiple>
+          <option value="latte">latte</option>
+          <option value="bullshit">bullshit</option>
+          <option value="expresso">expresso</option>
+          <option value="wallagga">wallagga</option>
+          <option value="harar">harar</option>
+          <option value="jimma">jimma</option>
+        </select>
+        <button type="submit">Submit</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+      </form>
+      <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+      <script>
+        new MultiSelectTag("coffee"); // id
+
+        function resetForm() {
+          document.getElementById("coffee-form").reset();
+          // Manually trigger the change event after reset to update the appearance of the select element
+          document.getElementById("coffee").dispatchEvent(new Event("change"));
+        }
+      </script>
+    </fieldset>
+  </body>
+</html>
